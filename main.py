@@ -77,7 +77,7 @@ gravatar = Gravatar(app,
 def admin_only(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if current_user.id != 1 or not current_user.is_co_admin:
+        if current_user.id != 1 and not current_user.is_co_admin:
             return abort(403)
         return f(*args, **kwargs)
     return decorated_function            

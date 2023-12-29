@@ -62,7 +62,7 @@
                   (co-admin)
                   {% endif %}
                   {% if current_user.is_co_admin or current_user.id == 1 %}
-                  {% if not comment.author.is_co-admin and not comment.author.id == 1 %}
+                  {% if not comment.author.is_co_admin and not comment.author.id == 1 %}
                   <a href={{ url_for("promote", user_id=comment.author.id, post_id=post.id) }}>promote</a>
                   {% endif %}
                   {% endif %}
