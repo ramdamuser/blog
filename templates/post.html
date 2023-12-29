@@ -27,7 +27,7 @@
       <div class="col-md-10 col-lg-8 col-xl-7">
         {{ post.body|safe }}
         <!--TODO: Only show Edit Post button if user id is 1 (admin user) -->
-        {% if current_user.id == 1 %}
+        {% if current_user.id == 1 or current_user.is_co_admin %}
         <div class="d-flex justify-content-end mb-4">
           <a
             class="btn btn-primary float-right"
