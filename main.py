@@ -48,7 +48,7 @@ class BlogPost(db.Model):
     subtitle = db.Column(db.String(250), nullable=False)
     date = db.Column(db.String(250), nullable=False)
     body = db.Column(db.Text, nullable=False)
-    img_url = db.Column(db.Text(500), nullable=False)
+    img_url = db.Column(db.Text, nullable=False)
     comments = relationship("Comment", back_populates="parent_post")
 
 
